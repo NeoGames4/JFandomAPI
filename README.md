@@ -19,3 +19,6 @@ Fandom fandom = new Fandom(id);
 The ID should look like fandom-id.fandom.com[/lang] (for example '`disney.fandom.com`' or '`avatar.fandom.com/de`').
 
 3. Do whatever you want to do (but make sure to follow WikiMedia's and Fandom's guidelines of course).
+
+## Documentation
+A documentation can be found here: https://neogames4.github.io/docs/JFandomAPI/index.html
