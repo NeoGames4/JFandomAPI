@@ -7,12 +7,13 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.net.MalformedURLException;
+import java.text.SimpleDateFormat;
 import java.time.Instant;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 
 import org.json.JSONArray;
@@ -526,7 +527,8 @@ public class FandomActivity {
 									for(Thread t : threads) t.join(2000);
 									threads.clear();
 								}
-								last = all.size() > 0 ? all.get(all.size()-1).timestamp : last;
+								SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
+								last = all.size() > 0 ? format.format(new Date(format.parse(all.get(all.size()-1).timestamp).getTime()+1000l)) : last;
 								saveLastValues();
 							} catch(Exception e) {
 								e.printStackTrace();
